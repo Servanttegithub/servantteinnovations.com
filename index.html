@@ -1,38 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Servantte Innovations</title>
-    <link rel="icon" href="src/LOGO.png" type="image/x-icon">
-    <meta property="og:title" content="Servantte Innovations" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
 
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Noto Sans;
-        font-size: 16px;
-      }
+<head>
+  <title>Servantte Innovations</title>
+  <link rel="icon" href="src/LOGO.png" type="image/x-icon">
+  <meta property="og:title" content="Servantte Innovations" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta property="twitter:card" content="summary_large_image" />
 
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-theme-neutral-dark);
-        background-color: var(--dl-color-theme-neutral-light);
+  <style data-tag="reset-style-sheet">
+    html {
+      line-height: 1.15;
+    }
 
-        fill: var(--dl-color-theme-neutral-dark);
-      }
-      .popup {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 9; /* Sit on top */
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+    }
+
+    p,
+    li,
+    ul,
+    pre,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    figure,
+    blockquote,
+    figcaption {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      background-color: transparent;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      -webkit-appearance: button;
+    }
+
+    button::-moz-focus-inner,
+    [type="button"]::-moz-focus-inner,
+    [type="reset"]::-moz-focus-inner,
+    [type="submit"]::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+
+    button:-moz-focus,
+    [type="button"]:-moz-focus,
+    [type="reset"]:-moz-focus,
+    [type="submit"]:-moz-focus {
+      outline: 1px dotted ButtonText;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    input {
+      padding: 2px 4px;
+    }
+
+    img {
+      display: block;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+  </style>
+  <style data-tag="default-style-sheet">
+    html {
+      font-family: Noto Sans;
+      font-size: 16px;
+    }
+
+    body {
+      font-weight: 400;
+      font-style: normal;
+      text-decoration: none;
+      text-transform: none;
+      letter-spacing: normal;
+      line-height: 1.15;
+      color: var(--dl-color-theme-neutral-dark);
+      background-color: var(--dl-color-theme-neutral-light);
+
+      fill: var(--dl-color-theme-neutral-dark);
+    }
+
+    .popup {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 9;
+      /* Sit on top */
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -41,7 +135,7 @@
       padding: 20px;
       border-radius: 10px;
       background-color: white;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       text-align: center;
       animation: fadeIn 0.5s;
     }
@@ -51,6 +145,7 @@
         opacity: 0;
         transform: translate(-50%, -60%);
       }
+
       to {
         opacity: 1;
         transform: translate(-50%, -50%);
@@ -72,542 +167,486 @@
     }
 
 
-    #menu_button{
+    #menu_button {
       display: flex;
       gap: 40px;
+
     }
 
     @media (max-width: 600px) {
-      #menu_button{
+      #menu_button {
         display: none;
       }
-     }
-   .sev_img{
-     width: 100px;
-     height: 100px;
-   }
+    }
 
-    </style>
-   
-   
-   <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
-  </head>
-  <body>
-      <script>
-window.embeddedChatbotConfig = {
-chatbotId: "cePdv-g6Ynk8OZb0Rm4MV",
-domain: "www.chatbase.co"
-}
-</script>
-<script
-src="https://www.chatbase.co/embed.min.js"
-chatbotId="cePdv-g6Ynk8OZb0Rm4MV"
-domain="www.chatbase.co"
-defer>
-</script>
-    <link rel="stylesheet" href="./style.css" />
-    <div>
-      <link href="./index.css" rel="stylesheet" />
+    .sev_img {
+      width: auto;
+      height: 100%;
+    }
 
-      <div class="home-container">
-        <div class="home-navbar1">
-          <div class="navbar4-container">
-            <header data-thq="thq-navbar" class="navbar4-navbar-interactive">
-              
-              <div style="display: flex;">
-                <a href="index.html" class="navbar4-navlink">
-                  <img
-                    alt="Tech Company Logo"
-                    src="src/innovations.png"
-                    class="navbar4-image"
-                   />;
-               </a>
+    #tabs_button {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+
+    .header_items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      height: 100px;
+    }
+
+
+    .sevlogo {
+      margin-left: 100px;
+    }
+  </style>
+
+
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+</head>
+
+<body>
+  <script>
+    window.embeddedChatbotConfig = {
+      chatbotId: "cePdv-g6Ynk8OZb0Rm4MV",
+      domain: "www.chatbase.co"
+    }
+  </script>
+  <script src="https://www.chatbase.co/embed.min.js" chatbotId="cePdv-g6Ynk8OZb0Rm4MV" domain="www.chatbase.co" defer>
+  </script>
+  <link rel="stylesheet" href="./style.css" />
+  <div>
+    <link href="./index.css" rel="stylesheet" />
+
+    <div class="home-container">
+      <div class="home-navbar1">
+
+
+        <div class="navbar4-container">
+          <header data-thq="thq-navbar" class="navbar4-navbar-interactive">
+             <a href="index.html" class="navbar4-navlink"> <img src="src/effect22.png" class="sev_img" alt=""></a>
+                <div id="menu_button">
+                <a href="index.html" class="navbar4-link1 thq-body-small thq-link">Home</a>
+                <a href="services.html" class="navbar4-link2 thq-body-small thq-link">Services</a>
+                <a href="training.html" class="navbar4-link3 thq-body-small thq-link">Training</a>
+                <a href="projects.html" class="navbar4-link3 thq-body-small thq-link">Projects</a>
               </div>
-             
-             
-          <div id="menu_button">
-              <a
-              href="index.html"
-              class="navbar4-link1 thq-body-small thq-link"
-            >
-              <span>Home</span>
-            </a>
-            <a
-              href="services.html"
-              class="navbar4-link2 thq-body-small thq-link"
-            >
-              <span>Services</span>
-            </a>
-            <a
-              href="training.html"
-              class="navbar4-link3 thq-body-small thq-link"
-            >
-              <span>Training</span>
-            </a>
-            <a
-              href="projects.html"
-              class="navbar4-link3 thq-body-small thq-link"
-            >
-              <span>Projects</span>
-            </a>
-             </div>
-             
-             
-              
-              
-              
-              
-              
-              
-              <div class="navbar4-container1">
-                <div data-thq="thq-navbar-nav" class="navbar4-desktop-menu">
-                  <div class="navbar4-container2">
-                    <nav class="navbar4-links"></nav>
-                  </div>
-                  <div class="navbar4-buttons">
-                    <a
-                      href="contact-us.html"
-                      class="navbar4-action2 thq-button-outline"
-                    >
-                      <span>Contact Us</span>
-                    </a>
-                  </div>
+
+            <div class="navbar4-container1">
+              <div data-thq="thq-navbar-nav" class="navbar4-desktop-menu">
+                <div class="navbar4-container2">
+                  <nav class="navbar4-links"></nav>
+                </div>
+                <div class="navbar4-buttons">
+                  <a href="contact-us.html" class="navbar4-action2 thq-button-outline">Contact Us</a>
                 </div>
               </div>
-              <div data-thq="thq-burger-menu" class="navbar4-burger-menu">
-                <svg viewBox="0 0 1024 1024" class="navbar4-icon">
-                  <path
-                    d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                  ></path>
-                </svg>
-              </div>
-              <div data-thq="thq-mobile-menu" class="navbar4-mobile-menu">
-                <div class="navbar4-nav">
-                  <div class="navbar4-top">
-                    <div style="display: flex;">
-                      <a href="index.html" class="navbar4-navlink">
-                        <img
-                          alt="Tech Company Logo"
-                          src="src/LOGO.png"
-                          class="navbar4-image1"
-                          
-                        />
-                        <div style="display: block;">
-                          <h3 style="color: blue; margin-left: 5px;" >Servantte</h3>
-                           <h3 style="color: blue;margin-left: 5px; " >Innovations</h3>
-                        </div>
-                       
-                      </a>
-                    </div>
-                    
-                    
-                    <div data-thq="thq-close-menu" class="navbar4-close-menu">
-                      <svg viewBox="0 0 1024 1024" class="navbar4-icon2">
-                        <path
-                          d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
-                        ></path>
-                      </svg>
-                    </div>
+            </div>
+
+
+
+
+
+
+
+            <div data-thq="thq-burger-menu" class="navbar4-burger-menu">
+              <svg viewBox="0 0 1024 1024" class="navbar4-icon">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z">
+                </path>
+              </svg>
+            </div>
+
+            <div data-thq="thq-mobile-menu" class="navbar4-mobile-menu">
+              <div class="navbar4-nav">
+                <div class="navbar4-top">
+                  <div style="display: flex;">
+                    <a href="index.html" class="navbar4-navlink">
+                      <img alt="Tech Company Logo" src="src/LOGO.png" class="navbar4-image1" />
+                      <div style="display: block;">
+                        <h3 style="color: blue; margin-left: 5px;">Servantte</h3>
+                        <h3 style="color: blue; margin-left: 5px;">Innovations</h3>
+                      </div>
+                    </a>
                   </div>
-                  <nav class="navbar4-links1">
-                    <a
-                      href="index.html"
-                      class="navbar4-home thq-body-small thq-link"
-                    >
-                      <span>Home</span>
-                    </a>
-                    <a
-                      href="services.html"
-                      class="navbar4-link21 thq-body-small thq-link"
-                    >
-                      <span>Services</span>
-                    </a>
-                    <a
-                      href="training.html"
-                      class="navbar4-link31 thq-body-small thq-link"
-                    >
-                      <span>Training</span>
-                    </a>
-                    <a
-                    href="projects.html"
-                    class="navbar4-link3 thq-body-small thq-link"
-                  >
-                    <span>Projects</span>
-                  </a>
-                    <span class="thq-body-small thq-link navbar4-link4">
-                      <span>Portfolio</span>
+
+                  <div data-thq="thq-close-menu" class="navbar4-close-menu">
+                    <svg viewBox="0 0 1024 1024" class="navbar4-icon2">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <nav class="navbar4-links1">
+                  <a href="index.html" class="navbar4-home thq-body-small thq-link">Home</a>
+                  <a href="services.html" class="navbar4-link21 thq-body-small thq-link">Services</a>
+                  <a href="training.html" class="navbar4-link31 thq-body-small thq-link">Training</a>
+                  <a href="projects.html" class="navbar4-link3 thq-body-small thq-link">Projects</a>
+                  <span class="thq-body-small thq-link navbar4-link4">Portfolio</span>
+                  <a href="contact-us.html" class="navbar4-link5 thq-body-small thq-link">Contact</a>
+                </nav>
+              </div>
+              <div class="navbar4-buttons1">
+                <button class="thq-button-filled">Login</button>
+                <button class="navbar4-action21 thq-button-outline">Register</button>
+              </div>
+            </div>
+          </header>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+      <div class="home-hero2">
+        <div class="hero3-header9">
+          <img alt="Tech company building websites and software"
+            src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1NXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+            class="thq-img-ratio-16-9" />
+          <div class="hero3-content thq-section-padding">
+            <div class="hero3-max-width thq-flex-row thq-section-max-width">
+              <div class="hero3-column">
+                <h1 class="thq-heading-1 hero3-text">
+                  <span>Servantte Innovations</span>
+                </h1>
+              </div>
+              <div class="hero3-column1">
+                <p class="thq-body-large hero3-text1">
+                  <span>Empowering Online Growth</span>
+                </p>
+                <div class="hero3-actions">
+                  <a href="projects.html" class="hero3-button thq-button-outline">
+                    <span class="thq-body-small hero3-text2">
+                      <span>Our Projects</span>
                     </span>
-                    <a
-                      href="contact-us.html"
-                      class="navbar4-link5 thq-body-small thq-link"
-                    >
-                      <span>Contact</span>
+                  </a>
+                  <button class="hero3-button1 thq-button-outline button">
+                    <a href="contact-us.html" class="hero3-text3 thq-body-small">
+                      Contact Us
                     </a>
-                  </nav>
-                </div>
-                <div class="navbar4-buttons1">
-                  <button class="thq-button-filled">Login</button>
-                  <button class="navbar4-action21 thq-button-outline">
-                    Register
                   </button>
                 </div>
               </div>
-            </header>
+            </div>
           </div>
         </div>
-        <div class="home-hero2">
-          <div class="hero3-header9">
-            <img
-              alt="Tech company building websites and software"
-              src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1NXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-              class="thq-img-ratio-16-9"
-            />
-            <div class="hero3-content thq-section-padding">
-              <div class="hero3-max-width thq-flex-row thq-section-max-width">
-                <div class="hero3-column">
-                  <h1 class="thq-heading-1 hero3-text">
-                    <span>Servantte Innovations</span>
-                  </h1>
+        <div class="thq-section-padding hero7-root-class-name">
+          <div class="hero7-max-width thq-section-max-width">
+            <div class="hero7-content">
+              <h1 class="hero7-text thq-heading-1">
+                <span>Welcome to Servantte Innovations</span>
+              </h1>
+              <p class="hero7-text1 thq-body-large">
+                <span>
+                  Your partner for custom website development, IT training,
+                  software solutions, and consultancy services.
+                </span>
+              </p>
+              <div class="hero7-actions">
+                <div class="hero7-container">
+                  <button class="thq-button-filled hero7-button">
+                    <span class="hero7-text2 thq-body-small">
+                      <span>Learn More</span>
+                    </span>
+                  </button>
                 </div>
-                <div class="hero3-column1">
-                  <p class="thq-body-large hero3-text1">
-                    <span>Empowering Online Growth</span>
+                <div class="hero7-container1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-gallery4">
+        <div class="gallery1-gallery3 thq-section-padding gallery1-root-class-name">
+          <div class="gallery1-max-width thq-section-max-width">
+            <div class="gallery1-section-title">
+              <h2 class="gallery1-text thq-heading-2">
+                <span>Our Projects</span>
+              </h2>
+              <span class="gallery1-text1 thq-body-large">
+                <span>Check out some of our latest projects below.</span>
+              </span>
+            </div>
+            <div class="gallery1-content">
+              <div class="gallery1-container">
+                <img alt="Website project 1"
+                  src="https://images.unsplash.com/photo-1524758870432-af57e54afa26?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1Nnw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                  class="thq-img-ratio-4-3" />
+              </div>
+              <div class="gallery1-container1">
+                <img alt="Website project 2"
+                  src="https://images.unsplash.com/photo-1536148935331-408321065b18?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1N3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                  class="thq-img-ratio-4-3" />
+              </div>
+              <div class="gallery1-container2">
+                <img alt="Website project 3"
+                  src="https://images.unsplash.com/photo-1523289333742-be1143f6b766?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1NXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                  class="thq-img-ratio-4-3" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-features5">
+        <div class="features171-layout349 thq-section-padding">
+          <div class="features171-max-width thq-section-max-width">
+            <div class="features171-image-container">
+              <img alt="Custom Website Development Image"
+                src="https://images.unsplash.com/photo-1581093803931-46e730e7622e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1OHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                class="thq-img-ratio-16-9" />
+            </div>
+            <div class="features171-content">
+              <div class="features171-section-title">
+                <span class="thq-body-small">
+                  <span>Tailored solutions for your online presence</span>
+                </span>
+                <div class="features171-content1">
+                  <h2 class="thq-heading-2">
+                    <span>Custom Website Development</span>
+                  </h2>
+                  <p class="thq-body-large">
+                    <span>
+                      Our team of experts will work with you to create a
+                      unique and user-friendly website that meets your
+                      specific needs and goals.
+                    </span>
                   </p>
-                  <div class="hero3-actions">
-                    <a
-                      href="projects.html"
-                      class="hero3-button thq-button-outline"
-                    >
-                      <span class="thq-body-small hero3-text2">
-                        <span>Our Projects</span>
-                      </span>
-                    </a>
-                    <button class="hero3-button1 thq-button-outline button">
-                      <a
-                        href="contact-us.html"
-                        class="hero3-text3 thq-body-small"
-                      >
-                        Contact Us
-                      </a>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="thq-section-padding hero7-root-class-name">
-            <div class="hero7-max-width thq-section-max-width">
-              <div class="hero7-content">
-                <h1 class="hero7-text thq-heading-1">
-                  <span>Welcome to Servantte Innovations</span>
-                </h1>
-                <p class="hero7-text1 thq-body-large">
-                  <span>
-                    Your partner for custom website development, IT training,
-                    software solutions, and consultancy services.
-                  </span>
-                </p>
-                <div class="hero7-actions">
-                  <div class="hero7-container">
-                    <button class="thq-button-filled hero7-button">
-                      <span class="hero7-text2 thq-body-small">
-                        <span>Learn More</span>
-                      </span>
-                    </button>
-                  </div>
-                  <div class="hero7-container1"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="home-gallery4">
-          <div
-            class="gallery1-gallery3 thq-section-padding gallery1-root-class-name"
-          >
-            <div class="gallery1-max-width thq-section-max-width">
-              <div class="gallery1-section-title">
-                <h2 class="gallery1-text thq-heading-2">
-                  <span>Our Projects</span>
-                </h2>
-                <span class="gallery1-text1 thq-body-large">
-                  <span>Check out some of our latest projects below.</span>
+      </div>
+      <div class="home-features6">
+        <div class="features18-layout349 thq-section-padding">
+          <div class="features18-max-width thq-section-max-width">
+            <div class="features18-content">
+              <div class="features18-section-title">
+                <span class="thq-body-small">
+                  <span>Create Your Online Presence</span>
+                </span>
+                <div class="features18-content1">
+                  <h2 class="thq-heading-2">
+                    <span>Mobile &amp; Desktop App Development</span>
+                  </h2>
+                  <p class="thq-body-large">
+                    <span>
+                      We specialize in building custom websites tailored to
+                      your needs and brand identity.
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="features18-image-container">
+              <img alt="Website Building"
+                src="https://images.unsplash.com/photo-1556155092-490a1ba16284?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1OHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                class="thq-img-ratio-16-9" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-features7">
+        <div class="features17-layout349 thq-section-padding">
+          <div class="features17-max-width thq-section-max-width">
+            <div class="features17-image-container">
+              <img alt="Custom Website Development Image"
+                src="https://images.unsplash.com/photo-1541188903310-8e078edbcaf6?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1N3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                class="thq-img-ratio-16-9" />
+            </div>
+            <div class="features17-content">
+              <div class="features17-section-title">
+                <span class="thq-body-small">
+                  <span>Tailored solutions for your unique needs</span>
+                </span>
+                <div class="features17-content1">
+                  <h2 class="thq-heading-2">
+                    <span>IT Training &amp; Consultation</span>
+                  </h2>
+                  <p class="thq-body-large">
+                    <span>
+                      We offer IT consultancy, management, and training
+                      services to ensure our clients' IT infrastructure
+                      operates efficiently with minimal downtime, maximizing
+                      productivity. Our expert team helps clients optimize
+                      their IT systems and provides training, allowing them to
+                      focus on their core business.
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-cta8"></div>
+      <div class="home-faq9">
+        <div class="faq1-faq7 thq-section-padding">
+          <div class="faq1-max-width thq-section-max-width">
+            <div class="thq-flex-column">
+              <h2 class="thq-heading-2"><span>FAQs</span></h2>
+            </div>
+            <div class="thq-flex-column faq1-list">
+              <div class="faq1-list-item1">
+                <p class="faq1-faq1-question thq-body-large">
+                  <span>What services do you offer?</span>
+                </p>
+                <span class="thq-body-small">
+                  <span>
+                    We specialize in building websites and software, as well
+                    as providing web training to individuals.
+                  </span>
                 </span>
               </div>
-              <div class="gallery1-content">
-                <div class="gallery1-container">
-                  <img
-                    alt="Website project 1"
-                    src="https://images.unsplash.com/photo-1524758870432-af57e54afa26?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1Nnw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                    class="thq-img-ratio-4-3"
-                  />
-                </div>
-                <div class="gallery1-container1">
-                  <img
-                    alt="Website project 2"
-                    src="https://images.unsplash.com/photo-1536148935331-408321065b18?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1N3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                    class="thq-img-ratio-4-3"
-                  />
-                </div>
-                <div class="gallery1-container2">
-                  <img
-                    alt="Website project 3"
-                    src="https://images.unsplash.com/photo-1523289333742-be1143f6b766?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1NXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                    class="thq-img-ratio-4-3"
-                  />
-                </div>
+              <div class="faq1-list-item2">
+                <p class="faq1-faq2-question thq-body-large">
+                  <span>How can I request a quote for a project?</span>
+                </p>
+                <span class="thq-body-small">
+                  <span>
+                    You can request a quote by filling out the contact form on
+                    our website or by reaching out to us directly via email or
+                    phone.
+                  </span>
+                </span>
+              </div>
+              <div class="faq1-list-item3">
+                <p class="faq1-faq3-question thq-body-large">
+                  <span>
+                    Do you offer ongoing support for websites and software?
+                  </span>
+                </p>
+                <span class="thq-body-small">
+                  <span>
+                    Yes, we provide ongoing support and maintenance services
+                    to ensure your website or software functions smoothly.
+                  </span>
+                </span>
+              </div>
+              <div class="faq1-list-item4">
+                <p class="faq1-faq4-question thq-body-large">
+                  <span>
+                    Can you customize a training program for my specific
+                    needs?
+                  </span>
+                </p>
+                <span class="thq-body-small">
+                  <span>
+                    Absolutely! We can tailor a training program to meet your
+                    specific requirements and goals.
+                  </span>
+                </span>
+              </div>
+              <div class="faq1-list-item5">
+                <p class="faq1-faq5-question thq-body-large">
+                  <span>
+                    What programming languages do you specialize in?
+                  </span>
+                </p>
+                <span class="thq-body-small">
+                  <span>
+                    We specialize in a wide range of programming languages
+                    including HTML, CSS, JavaScript, Python, and more.
+                  </span>
+                </span>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="home-features5">
-          <div class="features171-layout349 thq-section-padding">
-            <div class="features171-max-width thq-section-max-width">
-              <div class="features171-image-container">
-                <img
-                  alt="Custom Website Development Image"
-                  src="https://images.unsplash.com/photo-1581093803931-46e730e7622e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1OHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="thq-img-ratio-16-9"
-                />
+            <div class="thq-flex-column">
+              <div class="faq1-content1">
+                <h2 class="thq-heading-2">
+                  <span>Still have a question?</span>
+                </h2>
               </div>
-              <div class="features171-content">
-                <div class="features171-section-title">
-                  <span class="thq-body-small">
-                    <span>Tailored solutions for your online presence</span>
-                  </span>
-                  <div class="features171-content1">
-                    <h2 class="thq-heading-2">
-                      <span>Custom Website Development</span>
-                    </h2>
-                    <p class="thq-body-large">
-                      <span>
-                        Our team of experts will work with you to create a
-                        unique and user-friendly website that meets your
-                        specific needs and goals.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="home-features6">
-          <div class="features18-layout349 thq-section-padding">
-            <div class="features18-max-width thq-section-max-width">
-              <div class="features18-content">
-                <div class="features18-section-title">
-                  <span class="thq-body-small">
-                    <span>Create Your Online Presence</span>
-                  </span>
-                  <div class="features18-content1">
-                    <h2 class="thq-heading-2">
-                      <span>Mobile &amp; Desktop App Development</span>
-                    </h2>
-                    <p class="thq-body-large">
-                      <span>
-                        We specialize in building custom websites tailored to
-                        your needs and brand identity.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="features18-image-container">
-                <img
-                  alt="Website Building"
-                  src="https://images.unsplash.com/photo-1556155092-490a1ba16284?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1OHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="thq-img-ratio-16-9"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="home-features7">
-          <div class="features17-layout349 thq-section-padding">
-            <div class="features17-max-width thq-section-max-width">
-              <div class="features17-image-container">
-                <img
-                  alt="Custom Website Development Image"
-                  src="https://images.unsplash.com/photo-1541188903310-8e078edbcaf6?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxNjU0MzQ1N3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="thq-img-ratio-16-9"
-                />
-              </div>
-              <div class="features17-content">
-                <div class="features17-section-title">
-                  <span class="thq-body-small">
-                    <span>Tailored solutions for your unique needs</span>
-                  </span>
-                  <div class="features17-content1">
-                    <h2 class="thq-heading-2">
-                      <span>IT Training &amp; Consultation</span>
-                    </h2>
-                    <p class="thq-body-large">
-                      <span>
-                        We offer IT consultancy, management, and training
-                        services to ensure our clients' IT infrastructure
-                        operates efficiently with minimal downtime, maximizing
-                        productivity. Our expert team helps clients optimize
-                        their IT systems and provides training, allowing them to
-                        focus on their core business.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="home-cta8"></div>
-        <div class="home-faq9">
-          <div class="faq1-faq7 thq-section-padding">
-            <div class="faq1-max-width thq-section-max-width">
-              <div class="thq-flex-column">
-                <h2 class="thq-heading-2"><span>FAQs</span></h2>
-              </div>
-              <div class="thq-flex-column faq1-list">
-                <div class="faq1-list-item1">
-                  <p class="faq1-faq1-question thq-body-large">
-                    <span>What services do you offer?</span>
-                  </p>
-                  <span class="thq-body-small">
-                    <span>
-                      We specialize in building websites and software, as well
-                      as providing web training to individuals.
-                    </span>
-                  </span>
-                </div>
-                <div class="faq1-list-item2">
-                  <p class="faq1-faq2-question thq-body-large">
-                    <span>How can I request a quote for a project?</span>
-                  </p>
-                  <span class="thq-body-small">
-                    <span>
-                      You can request a quote by filling out the contact form on
-                      our website or by reaching out to us directly via email or
-                      phone.
-                    </span>
-                  </span>
-                </div>
-                <div class="faq1-list-item3">
-                  <p class="faq1-faq3-question thq-body-large">
-                    <span>
-                      Do you offer ongoing support for websites and software?
-                    </span>
-                  </p>
-                  <span class="thq-body-small">
-                    <span>
-                      Yes, we provide ongoing support and maintenance services
-                      to ensure your website or software functions smoothly.
-                    </span>
-                  </span>
-                </div>
-                <div class="faq1-list-item4">
-                  <p class="faq1-faq4-question thq-body-large">
-                    <span>
-                      Can you customize a training program for my specific
-                      needs?
-                    </span>
-                  </p>
-                  <span class="thq-body-small">
-                    <span>
-                      Absolutely! We can tailor a training program to meet your
-                      specific requirements and goals.
-                    </span>
-                  </span>
-                </div>
-                <div class="faq1-list-item5">
-                  <p class="faq1-faq5-question thq-body-large">
-                    <span>
-                      What programming languages do you specialize in?
-                    </span>
-                  </p>
-                  <span class="thq-body-small">
-                    <span>
-                      We specialize in a wide range of programming languages
-                      including HTML, CSS, JavaScript, Python, and more.
-                    </span>
-                  </span>
-                </div>
-              </div>
-              <div class="thq-flex-column">
-                <div class="faq1-content1">
-                  <h2 class="thq-heading-2">
-                    <span>Still have a question?</span>
-                  </h2>
-                </div>
-             <div class="faq1-container">
-                 <a href="contact-us.html">
-                   <button class="faq1-button thq-button-outline">
-                     <span class="thq-body-small"><span>Contact Us</span></span>
-                    </button>
+              <div class="faq1-container">
+                <a href="contact-us.html">
+                  <button class="faq1-button thq-button-outline">
+                    <span class="thq-body-small"><span>Contact Us</span></span>
+                  </button>
                 </a>
-             </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="home-footer11">
-          <div class="footer15-container thq-section-padding">
-            <div class="footer15-max-width thq-section-max-width">
-              <div class="footer15-content">
-                <div class="footer15-actions">
-                  <div class="footer15-newsletter">
-                    <span class="thq-body-small">
-                      <span>
-                        Join our mailing list for the latest updates and
-                        promotions.
-                      </span>
+      </div>
+      <div class="home-footer11">
+        <div class="footer15-container thq-section-padding">
+          <div class="footer15-max-width thq-section-max-width">
+            <div class="footer15-content">
+              <div class="footer15-actions">
+                <div class="footer15-newsletter">
+                  <span class="thq-body-small">
+                    <span>
+                      Join our mailing list for the latest updates and
+                      promotions.
                     </span>
-                    <div class="footer15-actions1">
-                      <form action="add_email.php" method="post" class="footer15-form" id="emailForm">
-                        <div class="footer15-container1">
-                          <input
-                            type="email"
-                            name="email"
-                            placeholder="Enter your email"
-                            class="footer15-text-input thq-input"
-                            required
-                          />
-                        </div>
-                        <button type="submit" class="footer15-button thq-button-outline">
-                          <span class="thq-body-small">
-                            <span>Submit</span>
-                          </span>
-                        </button>
-                      </form>
-                      <div id="popup" class="popup">
-                        <span class="close" onclick="document.getElementById('popup').style.display='none'">&times;</span>
-                        <p id="popupMessage"></p>
+                  </span>
+                  <div class="footer15-actions1">
+                    <form action="add_email.php" method="post" class="footer15-form" id="emailForm">
+                      <div class="footer15-container1">
+                        <input type="email" name="email" placeholder="Enter your email"
+                          class="footer15-text-input thq-input" required />
                       </div>
-                    
-                      <script>
-                        document.getElementById('emailForm').addEventListener('submit', function(event) {
-                          event.preventDefault(); // Prevent the form from submitting the usual way
-                          
-                          var formData = new FormData(this);
-                    
-                          fetch('add_email.php', {
-                            method: 'POST',
-                            body: formData
-                          })
+                      <button type="submit" class="footer15-button thq-button-outline">
+                        <span class="thq-body-small">
+                          <span>Submit</span>
+                        </span>
+                      </button>
+                    </form>
+                    <div id="popup" class="popup">
+                      <span class="close" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+                      <p id="popupMessage"></p>
+                    </div>
+
+                    <script>
+                      document.getElementById('emailForm').addEventListener('submit', function (event) {
+                        event.preventDefault(); // Prevent the form from submitting the usual way
+
+                        var formData = new FormData(this);
+
+                        fetch('add_email.php', {
+                          method: 'POST',
+                          body: formData
+                        })
                           .then(response => response.text())
                           .then(result => {
                             document.getElementById('popupMessage').innerText = result;
@@ -617,126 +656,96 @@ defer>
                             document.getElementById('popupMessage').innerText = 'There was an error submitting your email.';
                             document.getElementById('popup').style.display = 'block';
                           });
-                        });
-                      </script>
-                      <span class="thq-body-small">
-                        <span>
-                          Stay connected with us on social media for updates and
-                          news.
-                        </span>
+                      });
+                    </script>
+                    <span class="thq-body-small">
+                      <span>
+                        Stay connected with us on social media for updates and
+                        news.
                       </span>
-                    </div>
+                    </span>
                   </div>
-                  <div class="footer15-media">
-                    <div class="footer15-container2">
-                     
-                     <div style="display: flex;">
-                <a href="index.html" class="navbar4-navlink">
-                  <img
-                    alt="Tech Company Logo"
-                    src="src/innovations.png"
-                   />
-                  
-                 
-                </a>
-              </div>
+                </div>
+                <div class="footer15-media">
+                  <div class="footer15-container2">
+
+                    <div style="display: flex;">
+                      <a href="index.html" class="navbar4-navlink">
+                        <img alt="Tech Company Logo"  src="src/effect22.png" />
 
 
-                      <div class="footer15-social-links">
-                        <a
-                          href="https://www.facebook.com/profile.php?id=61559546498305"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                          class="footer15-link"
-                        >
-                          <svg
-                            viewBox="0 0 877.7142857142857 1024"
-                            class="footer15-icon thq-icon-small"
-                          >
-                            <path
-                              d="M713.143 73.143c90.857 0 164.571 73.714 164.571 164.571v548.571c0 90.857-73.714 164.571-164.571 164.571h-107.429v-340h113.714l17.143-132.571h-130.857v-84.571c0-38.286 10.286-64 65.714-64l69.714-0.571v-118.286c-12-1.714-53.714-5.143-101.714-5.143-101.143 0-170.857 61.714-170.857 174.857v97.714h-114.286v132.571h114.286v340h-304c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571z"
-                            ></path>
-                          </svg>
-                        </a>
-                        <svg
-                          viewBox="0 0 877.7142857142857 1024"
-                          class="thq-icon-small"
-                        >
+                      </a>
+                    </div>
+
+
+                    <div class="footer15-social-links">
+                      <a href="https://www.facebook.com/profile.php?id=61559546498305" target="_blank"
+                        rel="noreferrer noopener" class="footer15-link">
+                        <svg viewBox="0 0 877.7142857142857 1024" class="footer15-icon thq-icon-small">
                           <path
-                            d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
-                          ></path>
+                            d="M713.143 73.143c90.857 0 164.571 73.714 164.571 164.571v548.571c0 90.857-73.714 164.571-164.571 164.571h-107.429v-340h113.714l17.143-132.571h-130.857v-84.571c0-38.286 10.286-64 65.714-64l69.714-0.571v-118.286c-12-1.714-53.714-5.143-101.714-5.143-101.143 0-170.857 61.714-170.857 174.857v97.714h-114.286v132.571h114.286v340h-304c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571z">
+                          </path>
                         </svg>
-                        <a
-                          href="https://x.com/Servantte_I?t=EJxtuLz1rH4pZzjwtHcw4g&amp;s=09"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                          class="footer15-link1"
-                        >
-                          <svg
-                            viewBox="0 0 950.8571428571428 1024"
-                            class="footer15-icon04 thq-icon-small"
-                          >
-                            <path
-                              d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
-                            ></path>
-                          </svg>
-                        </a>
-                        <a
-                        href="https://www.tiktok.com/@servantte_missions_w?_t=8mT1tmKE7WQ&amp;_r=1"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                          class="footer15-link2" 
-                          
-                        >
-                          <svg viewBox="0 0 1024 1024" class="footer15-icon06">
-                            <path
-                              d="M512 128h256v170h-170v428q0 70-51 120t-121 50-120-50-50-120 50-121 120-51q42 0 86 24v-450z"
-                            ></path>
-                          </svg>
-                        </a>
-                        <a
-                        
-                          href="https://youtube.com/@servantteinnovations?si=RzBZlqTorbYJ6dDA"
-                          target="_blank"
-                          rel="noreferrer noopener">
-                          <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                            <path
-                              d="M406.286 644.571l276.571-142.857-276.571-144.571v287.429zM512 152c215.429 0 358.286 10.286 358.286 10.286 20 2.286 64 2.286 102.857 43.429 0 0 31.429 30.857 40.571 101.714 10.857 82.857 10.286 165.714 10.286 165.714v77.714s0.571 82.857-10.286 165.714c-9.143 70.286-40.571 101.714-40.571 101.714-38.857 40.571-82.857 40.571-102.857 42.857 0 0-142.857 10.857-358.286 10.857v0c-266.286-2.286-348-10.286-348-10.286-22.857-4-74.286-2.857-113.143-43.429 0 0-31.429-31.429-40.571-101.714-10.857-82.857-10.286-165.714-10.286-165.714v-77.714s-0.571-82.857 10.286-165.714c9.143-70.857 40.571-101.714 40.571-101.714 38.857-41.143 82.857-41.143 102.857-43.429 0 0 142.857-10.286 358.286-10.286v0z"
-                            ></path>
-                          </svg></a>
-                        
-                        </div>
-                      </div>
+                      </a>
+                      <svg viewBox="0 0 877.7142857142857 1024" class="thq-icon-small">
+                        <path
+                          d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z">
+                        </path>
+                      </svg>
+                      <a href="https://x.com/Servantte_I?t=EJxtuLz1rH4pZzjwtHcw4g&amp;s=09" target="_blank"
+                        rel="noreferrer noopener" class="footer15-link1">
+                        <svg viewBox="0 0 950.8571428571428 1024" class="footer15-icon04 thq-icon-small">
+                          <path
+                            d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z">
+                          </path>
+                        </svg>
+                      </a>
+                      <a href="https://www.tiktok.com/@servantte_missions_w?_t=8mT1tmKE7WQ&amp;_r=1" target="_blank"
+                        rel="noreferrer noopener" class="footer15-link2">
+                        <svg viewBox="0 0 1024 1024" class="footer15-icon06">
+                          <path
+                            d="M512 128h256v170h-170v428q0 70-51 120t-121 50-120-50-50-120 50-121 120-51q42 0 86 24v-450z">
+                          </path>
+                        </svg>
+                      </a>
+                      <a href="https://youtube.com/@servantteinnovations?si=RzBZlqTorbYJ6dDA" target="_blank"
+                        rel="noreferrer noopener">
+                        <svg viewBox="0 0 1024 1024" class="thq-icon-small">
+                          <path
+                            d="M406.286 644.571l276.571-142.857-276.571-144.571v287.429zM512 152c215.429 0 358.286 10.286 358.286 10.286 20 2.286 64 2.286 102.857 43.429 0 0 31.429 30.857 40.571 101.714 10.857 82.857 10.286 165.714 10.286 165.714v77.714s0.571 82.857-10.286 165.714c-9.143 70.286-40.571 101.714-40.571 101.714-38.857 40.571-82.857 40.571-102.857 42.857 0 0-142.857 10.857-358.286 10.857v0c-266.286-2.286-348-10.286-348-10.286-22.857-4-74.286-2.857-113.143-43.429 0 0-31.429-31.429-40.571-101.714-10.857-82.857-10.286-165.714-10.286-165.714v-77.714s-0.571-82.857 10.286-165.714c9.143-70.857 40.571-101.714 40.571-101.714 38.857-41.143 82.857-41.143 102.857-43.429 0 0 142.857-10.286 358.286-10.286v0z">
+                          </path>
+                        </svg></a>
+
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="footer15-credits">
-                <div class="footer15-row">
-                  <div class="footer15-credits1">
-                    <span class="thq-body-small">
-                      <span>Privacy Policy</span>
-                    </span>
-                    <span class="thq-body-small">
-                      <span>Terms of Use</span>
-                    </span>
-                    <span class="thq-body-small"><span>Cookies</span></span>
-                  </div>
-                </div>
-                <span class="footer15-content3 thq-body-small">
-                  <span>
-                    © 2023 Servantte Innovations. All rights reserved.
-                  </span>
-                </span>
               </div>
             </div>
+          </div>
+          <div class="footer15-credits">
+            <div class="footer15-row">
+              <div class="footer15-credits1">
+                <span class="thq-body-small">
+                  <span>Privacy Policy</span>
+                </span>
+                <span class="thq-body-small">
+                  <span>Terms of Use</span>
+                </span>
+                <span class="thq-body-small"><span>Cookies</span></span>
+              </div>
+            </div>
+            <span class="footer15-content3 thq-body-small">
+              <span>
+                © 2023 Servantte Innovations. All rights reserved.
+              </span>
+            </span>
           </div>
         </div>
       </div>
     </div>
-    <script
-      defer=""
-      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
-    ></script>
-  </body>
+  </div>
+  </div>
+  <script defer="" src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+</body>
+
 </html>
