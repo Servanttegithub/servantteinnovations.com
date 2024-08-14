@@ -1,0 +1,19 @@
+# Ensure that your site is accessible from anywhere in the world
+
+# Enable mod_rewrite
+RewriteEngine On
+
+# If you have specific directories or files you want to protect, you can add rules here
+# For example, to allow access to a specific file:
+# RewriteRule ^secret-file.txt$ - [L]
+
+# If you have no restrictions, the following line will allow all traffic:
+Order allow,deny
+Allow from all
+
+# To prevent directory listings
+Options -Indexes
+
+# Optional: Redirect all HTTP traffic to HTTPS
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
