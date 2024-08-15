@@ -14,9 +14,11 @@
       line-height: 1.15;
     }
 
-    body {
-      margin: 0;
-    }
+    body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
     * {
       box-sizing: border-box;
@@ -173,11 +175,7 @@
 
     }
 
-    @media (max-width: 600px) {
-      #menu_button {
-        display: none;
-      }
-    }
+    
 
     .sev_img {
       width: 150px;
@@ -185,13 +183,13 @@
       
     }
      .video_div {
-      margin-left: 100px;
       height: 400px;
       width: 700px;
       cursor: pointer;
       border-radius: 20px;
       padding-top: 50px;
       background: rgb(11, 104, 167);
+      
     }
 
     #tabs_button {
@@ -223,6 +221,21 @@
 
     .sevlogo {
       margin-left: 100px;
+    }
+
+
+
+    @media (max-width: 600px) {
+      #menu_button {
+        display: none;
+      }
+      .video_div{
+        width: 100%;
+        height: 250px;
+        background: rgb(29, 106, 158);
+        border-radius: 20px;
+        
+      }
     }
   </style>
 
@@ -366,7 +379,12 @@
                 </h1>
               </div>
                   <div class="video_div2">
-                   <video class="video_div" controls autoplay loop  src="src/chatroom.mp4"></video>
+                   <video class="video_div"
+                    controls
+                     autoplay
+                      loop
+                    
+                    src="src/chatroom.mp4"></video>
                   </div>
               
               
