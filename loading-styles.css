@@ -1,0 +1,78 @@
+/* Full-screen loader with red background */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #001aff; /* Red background */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Align children vertically */
+}
+
+/* Loader content to center image and text */
+.loader-content {
+    text-align: center;
+}
+
+/* Blinking image */
+.blinking-image {
+    width: 80px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    animation: blink 1s linear infinite;
+    border-radius: 10%; /* Rounded corners */
+}
+
+/* Blinking animation */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Typing effect for the school name without moving text */
+.school-name {
+    font-weight: bold;
+    color: #ffffff; /* White text color for visibility */
+    margin-top: 10px; /* Space between image and text */
+    font-size: 1.2rem; /* Adjust font size if needed */
+    white-space: nowrap; /* Prevents text wrapping */
+    overflow: hidden; /* Hides the text before it appears */
+    position: relative;
+}
+
+/* Applying mask to reveal text */
+.school-name::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #001aff; /* Same as the background color */
+    animation: reveal 4s steps(30, end) forwards;
+}
+
+/* Reveal animation */
+@keyframes reveal {
+    from {
+        left: 0;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+/* Blinking caret effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}
