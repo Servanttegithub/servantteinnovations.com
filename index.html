@@ -248,9 +248,27 @@
     href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
     data-tag="font" />
   <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+  <link rel="stylesheet" href="loading-styles.css">
 </head>
 
 <body>
+  <script>window.addEventListener('load', function() {
+    const loader = document.getElementById('loader');
+    const mainContent = document.getElementById('main-content');
+    
+    // Set the delay to match the duration of the typing animation (4s here)
+    setTimeout(function() {
+        loader.style.display = 'none'; // Hide the loader
+        mainContent.style.display = 'block'; // Show the main content
+    }, 4000); // 4 seconds delay (match this with the typing animation duration)
+});</script>
+
+    <!-- Loading Screen -->
+<div id="loader">
+  <img src="src/LOGO.png" alt="Loading Image" class="blinking-image">
+  <p class="school-name">Servantte Innovations</p>
+</div>
+<script src="script.js"></script>
   <script>
     window.embeddedChatbotConfig = {
       chatbotId: "cePdv-g6Ynk8OZb0Rm4MV",
