@@ -13,6 +13,7 @@
             height: 100vh;
             background-color: #f7f7f7;
             margin: 0;
+            padding: 10px; /* Added padding for mobile */
         }
         #paypal-container {
             background-color: #fff;
@@ -20,6 +21,8 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            width: 100%;
+            max-width: 400px; /* Limit max width for larger screens */
         }
         h1 {
             margin-bottom: 20px;
@@ -30,14 +33,18 @@
 
 <div id="paypal-container">
     <h1>Secure Payment</h1>
-    <div id="paypal-container-J2HE45Z9KW742"></div>
+    <div id="paypal-button-container"></div>
 </div>
 
 <script src="https://www.paypal.com/sdk/js?client-id=BAAL-NPdbSJvQz6Va3IAGEzNJjULn1gGcak_jlD1HfpwUKfRK_hY2aI4dBYo-8UzCCmzHTiv8I_efBQRAg&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
 <script>
     paypal.HostedButtons({
         hostedButtonId: "J2HE45Z9KW742",
-    }).render("#paypal-container-J2HE45Z9KW742");
+        onApprove: function(data) {
+            // Redirect after successful payment
+            window.location.href = "https://servantteinnovations.com/";
+        },
+    }).render("#paypal-button-container");
 </script>
 
 </body>
