@@ -6,74 +6,54 @@
     <title>Secure Payment</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #f7f7f7 40%, #e0f7fa);
+            background-color: #f7f7f7;
             margin: 0;
             padding: 10px;
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
         }
         #paypal-container {
             background-color: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: 100%;
             max-width: 400px;
-            transform: translateY(30px);
-            animation: slideInUp 0.8s ease-in-out;
-        }
-        @keyframes slideInUp {
-            0% { transform: translateY(50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
         }
         h1 {
-            font-size: 24px;
             margin-bottom: 20px;
-            color: #00796b;
+            font-size: 24px;
+            color: #333;
         }
-        #paypal-button-container {
-            margin-top: 20px;
-        }
-        .amount-label {
-            font-size: 16px;
-            color: #00796b;
-        }
-        .input-amount {
+        #amount-input {
             font-size: 18px;
             padding: 10px;
-            margin: 15px 0;
+            margin-bottom: 20px;
             width: 100%;
-            max-width: 250px;
-            border: 1px solid #b2dfdb;
-            border-radius: 6px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             text-align: center;
-            transition: box-shadow 0.3s ease;
         }
-        .input-amount:focus {
-            box-shadow: 0 0 10px rgba(0, 150, 136, 0.5);
+        #paypal-button-container {
+            margin-top: 10px;
         }
-        .emoji {
-            font-size: 24px;
-            margin-bottom: 10px;
+        /* Ensuring buttons and inputs don't overflow the container */
+        button, input {
+            max-width: 100%;
         }
     </style>
 </head>
 <body>
 
 <div id="paypal-container">
-    <span class="emoji">💵</span>
     <h1>Secure Payment</h1>
-    <label class="amount-label" for="amount-input">Enter Amount</label>
-    <input type="text" id="amount-input" class="input-amount" placeholder="Amount in USD">
+    <label for="amount-input">Enter Amount (USD)</label>
+    <input type="number" id="amount-input" placeholder="$0.00">
     <div id="paypal-button-container"></div>
 </div>
 
